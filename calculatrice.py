@@ -8,24 +8,6 @@ from history import history
 
 def calculator():
     l = []
-    while True :
-        print("Welcome to the MAD calculator")
-        print('''
-      _____________________
-     |  _________________  |
-     | |              0. | |
-     | |_________________| |
-     |  ___ ___ ___   ___  |
-     | | 7 | 8 | 9 | | + | |
-     | |___|___|___| |___| |
-     | | 4 | 5 | 6 | | - | |
-     | |___|___|___| |___| |
-     | | 1 | 2 | 3 | | * | |
-     | |___|___|___| |___| |
-     | | . | 0 | = | | / | |
-     | |___|___|___| |___| |
-     |_____________________|
-    ''')
     while True :            
             
         operation = str(input("Enter choice (+, -, *, /, **, ^, sqrt): "))
@@ -150,6 +132,7 @@ def calculator():
         if next_calculation.lower() != 'yes':
             print("Fermeture du supercalculateur MAD")
             return l
+        
         
 
     
