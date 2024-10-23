@@ -70,7 +70,7 @@ def calculator():
                 ''')
                 l.append(history(f"{n1} + {n2} = {addition(n1,n2)}"))
             
-            if operation == "-":
+            elif operation == "-":
                 print(f'''
                 _____________________
                 |  _________________  |
@@ -87,9 +87,9 @@ def calculator():
                 | |___|___|___| |___| |
                 |_____________________|
                 ''')
-                return history(f"{n1} - {n2} = {subtraction(n1,n2)}")
+                l.append(history(f"{n1} - {n2} = {subtraction(n1,n2)}"))
 
-            if operation == "/":
+            elif operation == "/":
                 print(f'''
                 _____________________
                 |  _________________  |
@@ -108,7 +108,7 @@ def calculator():
                 ''')
                 l.append(history(f"{n1} - {n2} = {subtraction(n1,n2)}"))
 
-            if operation == "*":
+            elif operation == "*":
                 print(f'''
                 _____________________
                 |  _________________  |
@@ -127,7 +127,7 @@ def calculator():
                 ''')
                 l.append(history(f"{n1} * {n2} = {multiplication(n1,n2)}"))
             
-            if operation == "**" or  operation == '^':
+            elif operation == "**" or  operation == '^':
                 print(f'''
                 _____________________
                 |  _________________  |
@@ -143,7 +143,7 @@ def calculator():
                 | | . | 0 | = | | / | |
                 | |___|___|___| |___| |
                 |_____________________|
-                ''')
+                ''') 
                 l.append(history(f"{n1} * {n2} = {exponentiation(n1,n2)}"))
         next_calculation = str(input("Do you want to perform another calculation? (yes/no): "))
         if next_calculation.lower() != 'yes':
