@@ -131,7 +131,10 @@ def calculator():
         next_calculation = str(input("Do you want to perform another calculation? (yes/no): "))
         if next_calculation.lower() != 'yes':
             print("Fermeture du supercalculateur MAD")
+            
             return l
+
+
         
         
 
