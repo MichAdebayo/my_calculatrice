@@ -24,8 +24,7 @@ def calculator():
      | |___|___|___| |___| |
      |_____________________|
     ''')
-    while True :
-            
+    while True :            
         operation = str(input("Enter choice (+, -, *, /, **, ^, sqrt): "))
         if operation == 'sqrt':
             n1 = float(input("Enter a number: "))
@@ -55,6 +54,7 @@ def calculator():
                 return history(f"{n1} * {n2} = {exponentiation(n1,n2)}")
         next_calculation = str(input("Do you want to perform another calculation? (yes/no): "))
         if next_calculation.lower() != 'yes':
+            print("Fermeture du supercalculateur MAD")
             break
         
 
