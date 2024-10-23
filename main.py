@@ -9,6 +9,7 @@ from modulo import modulo
 from logarithm import logarithm
 from trigonometry import sin,cos,tan
 from unit_conversion import *
+from history import *
 
 
 sin(45)
@@ -19,5 +20,6 @@ lb_to_kg(85)
 kilo_to_miles(100)
 miles_to_kilo(60)
 calculator()
+show_results()
 
 
