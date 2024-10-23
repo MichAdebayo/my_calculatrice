@@ -2,6 +2,7 @@ from addition import addition
 from division import division
 from subtraction import subtraction
 from multiplication import multiplication
+from calculatrice import calculator
 from exponentiation import exponentiation
 from sqrt import sqrt
 from trigonometry import sin,cos,tan
@@ -15,4 +16,7 @@ sqrt(16)
 sin(45)
 cos(45)
 tan(45)
+
+calculator()
+
 
