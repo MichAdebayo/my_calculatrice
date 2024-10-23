@@ -4,6 +4,7 @@ from subtraction import subtraction
 from multiplication import multiplication
 from exponentiation import exponentiation
 from sqrt import sqrt
+from history import history
 
 def calculator():
     print("Welcome to the MAD calculator")
@@ -30,22 +31,28 @@ def calculator():
     operation = str(input("Enter choice (+, -, *, /, **, ^, sqrt): "))
 
     if operation == "+":
-        return print(f"{n1} + {n2} = {addition(n1,n2)}")
+        print(f"{n1} + {n2} = {addition(n1,n2)}")
+        return history(f"{n1} + {n2} = {addition(n1,n2)}")
     
     if operation == "-":
-        return print(f"{n1} - {n2} = {subtraction(n1,n2)}")
+        print(f"{n1} - {n2} = {subtraction(n1,n2)}")
+        return history(f"{n1} - {n2} = {subtraction(n1,n2)}")
 
     if operation == "/":
-        return print(f"{n1} / {n2} = {division(n1,n2)}")
+        print(f"{n1} / {n2} = {division(n1,n2)}")
+        return history(f"{n1} - {n2} = {subtraction(n1,n2)}")
 
     if operation == "*":
-        return print(f"{n1} * {n2} = {multiplication(n1,n2)}")   
+        print(f"{n1} * {n2} = {multiplication(n1,n2)}") 
+        return history(f"{n1} * {n2} = {multiplication(n1,n2)}")
     
     if operation == "**" or  operation == '^':
-        return print(f"{n1} * {n2} = {exponentiation(n1,n2)}")  
+        print(f"{n1} * {n2} = {exponentiation(n1,n2)}")  
+        return history(f"{n1} * {n2} = {exponentiation(n1,n2)}")
     
     if operation == "sqrt":
-        return print(f"sqrt {n1} = {sqrt(n1)}")  
+        print(f"sqrt {n1} = {sqrt(n1)}")  
+        return history(f"sqrt {n1} = {sqrt(n1)}")
     
 
 
