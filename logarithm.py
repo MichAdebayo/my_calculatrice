@@ -1,4 +1,4 @@
 import math
 
-def logarithm(a: int):
-    return round(math.log(a),2)
+def logarithm(a: int, b:int):
+    return round(math.log(a,base=b),2)
