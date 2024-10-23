@@ -2,6 +2,8 @@ from addition import addition
 from division import division
 from subtraction import subtraction
 from multiplication import multiplication
+from exponentiation import exponentiation
+from sqrt import sqrt
 
 def calculator():
     print("Welcome to the MAD calculator")
