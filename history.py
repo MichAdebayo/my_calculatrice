@@ -1,4 +1,10 @@
-l = []
+
 def history(x):
-    l.append(x)
-    return l
+    with open("log_calculations.txt", "w") as f:
+        for elem in x:
+            f.write(elem)
+    
+
+# def show_results():
+#     print(l)
+
