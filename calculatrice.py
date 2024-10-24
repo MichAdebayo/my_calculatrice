@@ -7,16 +7,33 @@ from sqrt import sqrt
 from history import history
 
 def calculator():
+
     l = []
-    while True :            
+    operations = ["+", "-" , "*" , "/" , "**" , "^" , "sqrt"]
+
+    while True:
+        
+        try:            
             
-        operation = str(input("Enter choice (+, -, *, /, **, ^, sqrt): "))
+            operation = str(input("Enter choice (+, -, *, /, **, ^, sqrt): "))
+
+            if operation in operations:
+                break
+            else:
+                raise ValueError
+        
+        except ValueError:
+                print("Enter a valid operation")
+    
+    while True:
+
         if operation == 'sqrt':
             n1 = float(input("Enter a number: "))
+            result = {sqrt(n1)} 
             print(f'''
             _____________________
             |  _________________  |
-            | |{sqrt(n1)}       | |
+            | |{result}         | |
             | |_________________| |
             |  ___ ___ ___   ___  |
             | | 7 | 8 | 9 | | + | |
@@ -29,73 +46,37 @@ def calculator():
             | |___|___|___| |___| |
             |_____________________|
             ''')
-            l.append(history(f"sqrt {n1} = {sqrt(n1)}"))
+        
+            l.append(history("sqrt", n1, result=result))
         else:
             n1 = float(input("Enter first number: "))
             n2 = float(input("Enter second number: "))
+            result = None
+        
             if operation == "+":
-                print(f"{n1} + {n2} = {addition(n1,n2)}")
-                print(f'''
-                _____________________
-                |  _________________  |
-                | |{addition(n1,n2)}
-                | |_________________| |
-                |  ___ ___ ___   ___  |
-                | | 7 | 8 | 9 | | + | |
-                | |___|___|___| |___| |
-                | | 4 | 5 | 6 | | - | |
-                | |___|___|___| |___| |
-                | | 1 | 2 | 3 | | * | |
-                | |___|___|___| |___| |
-                | | . | 0 | = | | / | |
-                | |___|___|___| |___| |
-                |_____________________|
-                ''')
-                l.append(history(f"{n1} + {n2} = {addition(n1,n2)}"))
-            
+                result = addition(n1,n2)
+
             elif operation == "-":
-                print(f'''
-                _____________________
-                |  _________________  |
-                | |{subtraction(n1,n2)}
-                | |_________________| |
-                |  ___ ___ ___   ___  |
-                | | 7 | 8 | 9 | | + | |
-                | |___|___|___| |___| |
-                | | 4 | 5 | 6 | | - | |
-                | |___|___|___| |___| |
-                | | 1 | 2 | 3 | | * | |
-                | |___|___|___| |___| |
-                | | . | 0 | = | | / | |
-                | |___|___|___| |___| |
-                |_____________________|
-                ''')
-                l.append(history(f"{n1} - {n2} = {subtraction(n1,n2)}"))
+                result = subtraction(n1,n2)
+
 
             elif operation == "/":
-                print(f'''
-                _____________________
-                |  _________________  |
-                | |{division(n1,n2)}
-                | |_________________| |
-                |  ___ ___ ___   ___  |
-                | | 7 | 8 | 9 | | + | |
-                | |___|___|___| |___| |
-                | | 4 | 5 | 6 | | - | |
-                | |___|___|___| |___| |
-                | | 1 | 2 | 3 | | * | |
-                | |___|___|___| |___| |
-                | | . | 0 | = | | / | |
-                | |___|___|___| |___| |
-                |_____________________|
-                ''')
-                l.append(history(f"{n1} - {n2} = {subtraction(n1,n2)}"))
+                result = division(n1,n2)
 
             elif operation == "*":
+                result = multiplication(n1,n2)
+            
+            elif operation == "**" or  operation == '^':
+                result = exponentiation(n1,n2)
+            
+            else:
+                print("Error: enter correct operation")
+
+            if result is not None:
                 print(f'''
                 _____________________
                 |  _________________  |
-                | |{multiplication(n1,n2)}
+                | |{result}         | |
                 | |_________________| |
                 |  ___ ___ ___   ___  |
                 | | 7 | 8 | 9 | | + | |
@@ -108,34 +89,22 @@ def calculator():
                 | |___|___|___| |___| |
                 |_____________________|
                 ''')
-                l.append(history(f"{n1} * {n2} = {multiplication(n1,n2)}"))
-            
-            elif operation == "**" or  operation == '^':
-                print(f'''
-                _____________________
-                |  _________________  |
-                | |{exponentiation(n1,n2)}
-                | |_________________| |
-                |  ___ ___ ___   ___  |
-                | | 7 | 8 | 9 | | + | |
-                | |___|___|___| |___| |
-                | | 4 | 5 | 6 | | - | |
-                | |___|___|___| |___| |
-                | | 1 | 2 | 3 | | * | |
-                | |___|___|___| |___| |
-                | | . | 0 | = | | / | |
-                | |___|___|___| |___| |
-                |_____________________|
-                ''') 
-                l.append(history(f"{n1} * {n2} = {exponentiation(n1,n2)}"))
-            else:
-                print("error enter correct operation")
-                
+
+                l.append(history(operation, n1, n2, result))
+
+
         next_calculation = str(input("Do you want to perform another calculation? (yes/no): "))
+
         if next_calculation.lower() != 'yes':
             print("Fermeture du supercalculateur MAD")
             
-            return l
+            # Write to log file
+            with open("log_calculations.txt", "w") as f:
+                for entry in l:
+                    f.write(entry + "\n")  # Ensure each entry is a string
+            break
+        
+
 
 
         
