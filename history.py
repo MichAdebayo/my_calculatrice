@@ -1,10 +1,7 @@
 
-def history(x):
-    with open("log_calculations.txt", "w") as f:
-        for elem in x:
-            f.write(elem)
-    
-
-# def show_results():
-#     print(l)
-
+def history(operation, n1, n2=None, result=None):
+    """Creates a formatted string for the calculation."""
+    if operation == "sqrt":
+        return f"sqrt {n1} = {result}"
+    else:
+        return f"{n1} {operation} {n2} = {result}"
