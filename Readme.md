@@ -1,5 +1,7 @@
 # Calculatrice Simple
 
+<img src="https://github.com/user-attachments/assets/f5196ffb-929a-4f2e-9e08-efb7555bd6ff" width=200px height=300px>
+
 ## Description
 Ce projet est une calculatrice simple développée en Python. La calculatrice permet d'effectuer des opérations mathématiques de base telles que l'addition, la soustraction, la multiplication, et la division. Des fonctionnalités bonus avancées sont également proposées.
 L'utilisateur doit entrer l'opération qu'il souhaite réaliser sur des nombres.
