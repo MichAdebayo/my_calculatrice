@@ -68,6 +68,6 @@ Chaque fonctionnalité de la calculatrice est développée dans un fichier Pytho
 - Michael
 - Antoine
 - David
-(MAD)
+
 ## Licence
-Ce projet est sous licence MAD corp.
+Ce projet est sous licence MIT.
