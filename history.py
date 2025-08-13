@@ -1,4 +1,3 @@
-
 def history(operation, n1, n2=None, result=None):
     """Creates a formatted string for the calculation."""
     if operation == "sqrt":
